@@ -1,1 +1,1 @@
-web:gunicorn stdportal.wsgi
+web: gunicorn stdportal.wsgi
