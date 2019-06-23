@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'zs#h*uiwsxq+ai)=wh4%cl4%fol6g+r9h7r@z!xv0m26%pvs&@'
+# SECRET_KEY = 'zs#h*uiwsxq+ai)=wh4%cl4%fol6g+r9h7r@z!xv0m26%pvs&@'
+SECRET_KEY = os.environ.get('s_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['eccenterportal.herokuapp.com']
 
 
 # Application definition
@@ -131,8 +132,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR,'staticfiles')
+STATIC_URL = '/static/'
 
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
