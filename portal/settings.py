@@ -26,8 +26,7 @@ SECRET_KEY = os.environ.get('s_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['eccenterportal.herokuapp.com']
-
+# ALLOWED_HOSTS = ['eccenterportal.herokuapp.com']#
 
 # Application definition
 
