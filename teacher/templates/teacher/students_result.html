@@ -1,0 +1,37 @@
+{% extends "student/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+  <h2>{{results.0.subject.name}}  {{results.0.subject.code}}  Results </h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Student RollNo</th>
+        <th>Student Name</th>
+        <th>RT1</th>
+        <th>RT2</th>
+        <th>SA1</th>
+        <th>SA2</th>
+        <th>Total</th>
+        <th>Grade</th>
+        <th>Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+      <tr>
+        <td>{{result.student.rollno}}</td>
+        <td>{{result.student.user.first_name}} {{result.student.user.last_name}}</td>
+        <td>{{ result.rt1_result }}</td>
+        <td>{{ result.rt2_result }}</td>
+        <td>{{ result.sa1_result }}</td>
+        <td>{{ result.sa2_result }}</td>
+        <td>{{ result.total }}</td>
+        <td>{{ result.grade }}</td>
+        <td>{{ result.remarks }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

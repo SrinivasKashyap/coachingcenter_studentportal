@@ -1,0 +1,15 @@
+{% extends "student/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2 class="account-heading">{{courses.0.className}}</h2>
+  {% for course in courses %}
+  <div class="content-section">
+    <div class="media">
+      <div class="media-body">
+        <a class="mr-2" href="/teacher/HomeClass/Results/{{course.subject.pk}}/{{course.className.pk}}/">Subject : {{course.subject}}</a>
+        <a class="mr-2" href="{% url 'teacher_detail' course.teacher.pk %}">Faculty : {{ course.teacher }}</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}

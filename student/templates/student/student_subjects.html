@@ -1,0 +1,21 @@
+{% extends "student/base.html" %}
+{% block content %}
+  <div class="content-section">
+    <div class="media">
+      <div class="media-body">
+        <h2 class="account-heading">Subject Details:</h2>
+      </div>
+    </div>
+  <div class="content-section">
+    <div class="media">
+      <div class="media-body">
+      {% for course in courses %}
+        <h4><a class="article-title">Subject:{{ course.subject }}</a></h4>
+        <p><a class="article-title" href="{% url 'teacher_detail' course.teacher.pk %}">Teacher: {{ course.teacher }}</p>
+        <!-- <a class="btn btn-outline-info mb-4" href="#">Notes</a> -->
+        <a class="btn btn-outline-info mb-4" href="{% url 'student_subjects_detail' course.subject.pk %}">Result</a>
+      {% endfor %}
+      </div>
+    </div>
+    </div>
+{% endblock content %}

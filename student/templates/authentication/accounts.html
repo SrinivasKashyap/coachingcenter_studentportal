@@ -1,0 +1,9 @@
+{% extends "authentication/template.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+      <legend class="border-bottom mb-4">Choose your account type</legend>
+      <a class="btn btn-secondary btn-m mt-1 mb-1" href="{% url 'student_signup' %}">I'm a Student</a>
+      <a class="btn btn-secondary btn-m mt-1 mb-1" href="{% url 'teacher_signup' %}">I'm a Teacher</a>
+    </div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "student/base.html" %}
+{% block content %}
+<h2 class="account-heading">{{ result.subject }}</h2>
+  <div class="content-section">
+    <div class="media">
+      <div class="media-body">
+        <p>Rt1: {{ result.rt1_result }}</p>
+        <p>Rt2: {{ result.rt2_result }}</p>
+        <p>SA1: {{ result.sa1_result }}</p>
+        <p>SA2: {{ result.sa2_result }}</p>
+        <p>Total: {{ result.total }}</p>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "student/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2 class="account-heading">Classes Teaching</h2>
+  {% for course in courses %}
+  <div class="content-section">
+    <div class="media">
+      <div class="media-body">
+        <p class="mr-2" href="{% url 'update_result' course.pk %} ">Subject : {{ course.subject }}  Class : {{ course.className }}</p>
+        <a class="btn btn-outline-info mb-1" href="{% url 'update_result' course.pk %}">Update Result</a>
+        <a class="btn btn-outline-info mb-1" href="/teacher/HomeClass/Results/{{course.subject.pk}}/{{course.className.pk}}/">View Class Result</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "student/base.html" %}
+{% block content %}
+  <div class="content-section">
+    <div class="media">
+      <div class="media-body">
+        <img class="rounded-circle article-img" src="{{ object.user.image.url }}">
+        <h1>{{ object.user.first_name}}  {{ object.user.last_name }}</h1>
+        <p>Subject Specialised: {{ object.subject.name }}</p>
+        <p>Email id: {{ object.user.email }}</p>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
