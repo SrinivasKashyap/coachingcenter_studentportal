@@ -55,7 +55,7 @@ class HomeClassStudentResult(LoginRequiredMixin,View):
         subject=get_object_or_404(Subject, pk=spk)
         clss=get_object_or_404(Class, name=cpk)
         students=Student.objects.filter(class_studying=clss)
-        results=Result.objects.filter(student__in=students, subject=subject)
+        results=Result.objects.filter(student__in=students, subject=subject).order_by('student__rollno')
         context={'results':results}
         return render(request, 'teacher/students_result.html',context)
 
